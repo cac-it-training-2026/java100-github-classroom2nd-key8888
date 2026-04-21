@@ -48,6 +48,8 @@
 
 package lesson03.challenge08;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Explorer {
 
 	public static void main(String[] args) {
@@ -59,15 +61,26 @@ public class Explorer {
 		int lithograph = 0;
 		int i = 0;
 
-
 		//ここにdo～while文、if文を利用した処理を記述
+		do {
+			lithograph = ThreadLocalRandom.current().nextInt(0, 9);
+			if (lithograph == 3) {
+				System.out.println(" *  隊長：\n"
+						+ " *  やったー！3が出たよ！");
+				break;
+			}
+			System.out.println(" *  隊長：\n"
+					+ " *  %dだった...\n".formatted(lithograph)
+					+ " *  1時間待つよ（%d時間経過）\n".formatted(i));
+			i++;
 
+		} while (i < 7);
 
 		if (lithograph == 3) {
 			System.out.println("洞窟の入り口が開きました。");
 		} else {
 			System.out.println("隊長：");
-			System.out.println(lithograph + "だった...（" + (i - 1)+ "時間経過）");
+			System.out.println(lithograph + "だった...（" + (i - 1) + "時間経過）");
 			System.out.println("あの時サバ缶に手を付けていなければ...");
 			System.out.println("探検隊は全滅しました。");
 		}

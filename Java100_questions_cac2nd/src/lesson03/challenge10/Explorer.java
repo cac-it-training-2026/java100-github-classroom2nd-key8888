@@ -75,14 +75,36 @@ package lesson03.challenge10;
 
 public class Explorer {
 
-        public static void main(String[] args) {
+	public static void main(String[] args) {
 
-                System.out.println("隊長：");
-                System.out.println("滝の前に着いたよ！\n");
+		System.out.println("隊長：");
+		System.out.println("滝の前に着いたよ！\n");
 
+		String fen[] = { "00", "15", "30", "45" };
+		int ji = 13;
+		int i = 0;
 
-                //ここにfor文のネスト、if文を利用した処理を記述する。
+		String timeStmp = "%d:%s".formatted(ji, fen[(i % 4) + 3]);
 
+		System.out.println("隊長：\n"
+				+ timeStmp + " 待ち遠しいな～");
 
-        }
+		i++;
+
+		ji++;
+
+		timeStmp = "%d:%s".formatted(ji, fen[(i % 4) + 3]);
+
+		System.out.println("隊長：\n"
+				+ timeStmp + " 待ち遠しいな～");
+
+		//                for (int i = 0; i < 80; i++) {
+		//                	System.out.println("隊長：\n"
+		//                			+ timeStmp + " 待ち遠しいな～");
+		//                	
+		//                }
+
+		//ここにfor文のネスト、if文を利用した処理を記述する。
+
+	}
 }

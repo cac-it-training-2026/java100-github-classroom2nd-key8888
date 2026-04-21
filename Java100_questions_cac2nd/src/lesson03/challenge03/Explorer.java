@@ -34,7 +34,7 @@ import java.io.IOException;
 
 public class Explorer {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 
 		System.out.println("隊長：");
 		System.out.println("出発進行！\n");
@@ -43,12 +43,13 @@ public class Explorer {
 		int apsedTime = 0;
 
 		//ここにwhile文を記述する。
-
+		for (int i = 0; i < 23; i++) {
 			nauticalMile -= 22;
 			System.out.println("隊長：");
 			System.out.println((apsedTime += 1) + "時間たったよ\n");
-
-		//ここに  } を記述する。
+			Thread.sleep(1000);
+			//ここに  } を記述する。
+		}
 
 		System.out.println("到着！");
 
