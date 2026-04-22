@@ -36,15 +36,60 @@
 
 package lesson04.challenge07;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class WarehouseManager {
+
+	public static boolean checkDuplication(int arr[], int target) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static int findTargetIndex(int arr[], int target) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static void swap(int arr[], int indexA, int indexB) {
+		int temp = arr[indexA];
+		arr[indexA] = arr[indexB];
+		arr[indexB] = temp;
+	}
 
 	public static void main(String[] args) {
 
 		int[] ABKosanArray = new int[5];
 
-
-		//ここに重複チェックおよび値の代入処理を記述する
-
+		// ここに重複チェックおよび値の代入処理を記述する
+		while (true) {
+			int randomNum = ThreadLocalRandom.current().nextInt(1, 6);
+			if (checkDuplication(ABKosanArray, randomNum)) {
+				for (int i = 0; i < ABKosanArray.length; i++) {
+					if (ABKosanArray[i] == 0) {
+						ABKosanArray[i] = randomNum;
+						break;
+					}
+				}
+			}
+			boolean isFull = true;
+			for (int i = 0; i < ABKosanArray.length; i++) {
+				if (ABKosanArray[i] == 0) {
+					isFull = false;
+					break;
+				}
+			}
+			if (isFull) {
+				break;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の並べ替えをお願いします。\n");
@@ -61,9 +106,14 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
-		//ここに昇順にソートする処理を記述する
-
+		// ここに昇順にソートする処理を記述する
+		for (int i = 0; i < ABKosanArray.length - 1; i++) {
+			for (int j = 0; j < ABKosanArray.length - 1 - i; j++) {
+				if (ABKosanArray[j] > ABKosanArray[j + 1]) {
+					swap(ABKosanArray, j, j + 1);
+				}
+			}
+		}
 
 		System.out.println("小さい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
@@ -74,9 +124,14 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
-		//ここに降順にソートする処理を記述する
-
+		// ここに降順にソートする処理を記述する
+		for (int i = 0; i < ABKosanArray.length - 1; i++) {
+			for (int j = 0; j < ABKosanArray.length - 1 - i; j++) {
+				if (ABKosanArray[j] < ABKosanArray[j + 1]) {
+					swap(ABKosanArray, j, j + 1);
+				}
+			}
+		}
 
 		System.out.println("大きい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
