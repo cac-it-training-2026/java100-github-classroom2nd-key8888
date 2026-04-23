@@ -46,12 +46,14 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
+        Omegalian omegalian = new Omegalian();
+        omegalian.setItem(present);
 
-
-        String item = null;
+        String item = omegalian.getItem();
 
 
         //ここに適切な処理を記述する
+        
 
 
         System.out.println("\nΩ星人：");

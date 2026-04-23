@@ -52,6 +52,9 @@ class Spaceship {
     }
 
     //ここに適切な処理を記述する。
+    public static void count() {
+        System.out.println("宇宙船は全部で" + number + "台あります。");
+    }
 
 }
 
@@ -64,5 +67,6 @@ public class Astronaut {
         Spaceship spaceship3 = new Spaceship();
 
         //ここに適切な処理を記述する。
+        Spaceship.count();
     }
 }

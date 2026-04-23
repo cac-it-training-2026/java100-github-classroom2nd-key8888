@@ -18,6 +18,7 @@ class Spaceship {
     private int air;
     private int fuel;
     //ここにクラス変数を記述する。
+    public static int number = 0;
 
     
     
@@ -28,6 +29,7 @@ class Spaceship {
     public Spaceship(int air, int fuel) {
         this.air = air;
         this.fuel = fuel;
+        number = number + 1;
     }
 
     public int getFuel() {
@@ -55,11 +57,12 @@ public class Astronaut {
 
     public static void main(String[] args) {
 
-        Spaceship spaceship1 = new Spaceship();
+        Spaceship spaceship1 = new Spaceship(100, 10);
         System.out.println("1隻目の燃料は" + spaceship1.getFuel() + "です");        
-        Spaceship spaceship2 = new Spaceship();
+        Spaceship spaceship2 = new Spaceship(100, 20);
         System.out.println("2隻目の燃料は" + spaceship2.getFuel() + "です"); 
 
         //ここに処理を記述する
+        Spaceship.showsum();
     }
 }

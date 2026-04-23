@@ -19,7 +19,7 @@
 package lesson06.challenge01;
 
 class Spaceship {
-    int air;
+    private int air;
 }
 
 public class Astronaut {

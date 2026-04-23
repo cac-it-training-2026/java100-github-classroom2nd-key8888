@@ -53,12 +53,19 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
+        Gammalian gammalian = new Gammalian();
+        gammalian.setItem(present);
 
 
         boolean isGood = false;
 
 
         //ここに適切な処理を記述する
+        if (gammalian.isGood()) {
+            isGood = true;
+        } else {
+            isGood = false;
+        }
 
 
         System.out.println("\nγ星人：");

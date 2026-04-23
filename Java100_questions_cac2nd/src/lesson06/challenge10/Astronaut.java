@@ -45,9 +45,10 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
+        Betalian betalian = new Betalian();
+        betalian.setItem(present);
 
-
-        String item = null;
+        String item = betalian.getItem();
 
 
         //ここに適切な処理を記述する

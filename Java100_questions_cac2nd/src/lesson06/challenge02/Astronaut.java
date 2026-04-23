@@ -28,6 +28,12 @@ class Spaceship {
     private int air;
 
     //ここに適切な処理を記述する。
+    public void setAir(int air) {
+        this.air = air;
+    }
+    public int getAir() {
+        return this.air;
+    }
 }
 
 public class Astronaut {
@@ -41,6 +47,10 @@ public class Astronaut {
         int air = Integer.parseInt(airStr);
 
         //ここに適切な処理を記述する。
+        Spaceship spaceship1 = new Spaceship();
+        spaceship1.setAir(air);
+        System.out.println();
+        System.out.println(spaceship1.getAir() + "リットルの空気が入りました。");
 
     }
 
