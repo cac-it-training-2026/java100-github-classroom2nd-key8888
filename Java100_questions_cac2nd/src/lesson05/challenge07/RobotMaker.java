@@ -48,6 +48,9 @@ public class RobotMaker {
         //（インスタンス名はrobot）
         //randomWaterを実行する。
         //getWaterを実行する。
+        Robot robot = new Robot();
+        robot.randomWater();
+        water = robot.getWater();
 
         System.out.println("「ガ～ピィーガ～、ゲンザイノスイリョウハ" + water + "リットルデス。」\n");
 

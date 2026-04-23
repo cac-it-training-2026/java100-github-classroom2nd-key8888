@@ -60,6 +60,10 @@ public class RobotMaker {
         //（インスタンス名はrobot）
         //setWaterを実行する。
         //pumpWaterを実行する。
+        Robot robot = new Robot();
+        robot.setWater(water);
+        robot.pumpWater();
+        
     }
 
 }
