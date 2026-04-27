@@ -30,14 +30,22 @@ class Samurai {
         System.out.println("戦うよ～。");
     }
 
-
     //ここにwork()メソッドを記述
-
-
+    void work() {
+        System.out.println("何かして働くよ～。");
+    }
 }
 
 
 //ここに問題1で作成したRetainerを改変して記述
+class Retainer extends Samurai {
+
+    @Override
+    void work() {
+        System.out.println("年貢を取り立てるよ～。");
+    }
+
+}
 
 
 public class CastleTown {
@@ -49,6 +57,8 @@ public class CastleTown {
 
 
         //ここに必要な処理を記述
+        Samurai samurai1 = new Samurai();
+        samurai1.work();
 
 
         System.out.println("\n具体的に言うと藩士は年貢を取り立てます。\n");
@@ -57,7 +67,8 @@ public class CastleTown {
 
 
         //ここに必要な処理を記述
-
+        Retainer retainer1 = new Retainer();
+        retainer1.work();
 
     }
 }

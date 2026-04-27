@@ -45,9 +45,31 @@ class Samurai {
 
 
 //ここにRetainerクラスを記述
+class Retainer extends Samurai {
+
+    Retainer() {
+        this.name = "藩士";
+    }
+
+    @Override
+    void work() {
+        System.out.println("藩のために働くよ～");
+    }
+}
 
 
 //ここにRoninクラスを記述
+class Ronin extends Samurai {
+
+    Ronin() {
+        this.name = "浪人";
+    }
+
+    @Override
+    void work() {
+        System.out.println("自由に働くよ～");
+    }
+}
 
 
 public class CastleTown {
@@ -57,6 +79,12 @@ public class CastleTown {
 
 
         //ここに適切な処理を記述
+        Samurai[] samuraiArray = new Samurai[5];
+        samuraiArray[0] = new Retainer();
+        samuraiArray[1] = new Ronin();
+        samuraiArray[2] = new Retainer();
+        samuraiArray[3] = new Ronin();
+        samuraiArray[4] = new Retainer();
 
 
         System.out.println("詰め終わりました。\n");
@@ -64,7 +92,9 @@ public class CastleTown {
 
 
         //ここに適切な処理を記述
-
+        for (Samurai samurai : samuraiArray) {
+            System.out.println(samurai.getClass());
+        }
 
     }
 }

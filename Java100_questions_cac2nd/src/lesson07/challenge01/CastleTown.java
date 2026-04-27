@@ -25,9 +25,9 @@
 
 package lesson07.challenge01;
 
-class Samurai {
+public class Samurai {
 
-    void fight() {
+    public void fight() {
         System.out.println("戦うよ～。");
     }
 
@@ -35,6 +35,7 @@ class Samurai {
 
 
 //ここにRetainerクラスを記述
+// 別ファイルにで記述
 
 
 public class CastleTown {
@@ -53,6 +54,9 @@ public class CastleTown {
 
 
         //ここに必要な処理を記述
+        Retainer retainer1 = new Retainer();
+        retainer1.fight();
+        retainer1.getPaid();
 
 
     }
