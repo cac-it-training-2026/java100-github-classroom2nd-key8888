@@ -57,16 +57,36 @@
 
 package lesson04.challenge10;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class WarehouseManager {
 
 	public static void main(String[] args) {
 
+		// ここに必要な配列の宣言を記述する。
+		int[] C = new int[5];
+		int[] D = new int[5];
+		int[] E = new int[5];
 
-		//ここに必要な配列の宣言を記述する。
-
-
-		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
+		// ここに配列にThreadLocalする。(要素はランダム)
+		for (int i = 0; i < 5; i++) {
+			C[i] = ThreadLocalRandom.current().nextInt(1, 11); // 1～10のランダムな数値を生成
+			if (C[i] % 4 == 0) { // 1/4の確率で空き箱(0)にする
+				C[i] = 0;
+			}
+		}
+		for (int i = 0; i < 5; i++) {
+			D[i] = ThreadLocalRandom.current().nextInt(1, 11); // 1～10のランダムな数値を生成
+			if (D[i] % 4 == 0) { // 1/4の確率で空き箱(0)にする
+				D[i] = 0;
+			}
+		}
+		for (int i = 0; i < 5; i++) {
+			E[i] = ThreadLocalRandom.current().nextInt(1, 11); // 1～10のランダムな数値を生成
+			if (E[i] % 4 == 0) { // 1/4の確率で空き箱(0)にする
+				E[i] = 0;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送から預かった荷物の確認をお願いします。\n");
@@ -76,21 +96,33 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
-		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		// ここに配列Cの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < C.length; i++) {
+			System.out.print(C[i]);
+			if (i < C.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
-		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		// ここに配列Dの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < D.length; i++) {
+			System.out.print(D[i]);
+			if (i < D.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
-		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		// ここに配列Eの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < E.length; i++) {
+			System.out.print(E[i]);
+			if (i < E.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nです。\n");
 

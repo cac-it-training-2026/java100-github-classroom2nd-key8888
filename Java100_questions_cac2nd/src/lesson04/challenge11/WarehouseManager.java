@@ -62,16 +62,25 @@
 
 package lesson04.challenge11;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class WarehouseManager {
 
 	public static void main(String[] args) {
 
+		// ここに必要な配列の宣言を記述する。
+		int[] C = new int[5];
+		int[] D = new int[5];
+		int[] E = new int[5];
 
-		//ここに必要な配列の宣言を記述する。
-
-
-		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
+		// ここに配列に値を代入する処理を記述する。(要素はランダム)
+		for (int i = 0; i < 5; i++) {
+			C[i] = ThreadLocalRandom.current().nextInt(1, 11) * (ThreadLocalRandom.current().nextInt(4) == 0 ? 0 : 1);
+			D[i] = ThreadLocalRandom.current().nextInt(1, 11) * (ThreadLocalRandom.current().nextInt(4) == 0 ? 0 : 1);
+			E[i] = ThreadLocalRandom.current().nextInt(1, 11) * (ThreadLocalRandom.current().nextInt(4) == 0 ? 0 : 1);
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送の件、お願いします。\n");
@@ -81,48 +90,107 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
-		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		// ここに配列Cの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < C.length; i++) {
+			System.out.print(C[i]);
+			if (i < C.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
-		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		// ここに配列Dの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < D.length; i++) {
+			System.out.print(D[i]);
+			if (i < D.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
-		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		// ここに配列Eの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < E.length; i++) {
+			System.out.print(E[i]);
+			if (i < E.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nでした。直してきます...\n");
 
+		// ここに詰め替え処理を記述する
 
-		//ここに詰め替え処理を記述する
+		// 0以外の値を集めるリスト
+		List<Integer> list = new ArrayList<>();
 
+		// C・D・E から 0 以外を順番に追加
+		for (int i = 0; i < 5; i++) {
+			if (C[i] != 0)
+				list.add(C[i]);
+		}
+		for (int i = 0; i < 5; i++) {
+			if (D[i] != 0)
+				list.add(D[i]);
+		}
+		for (int i = 0; i < 5; i++) {
+			if (E[i] != 0)
+				list.add(E[i]);
+		}
+
+		// C・D・E をいったん 0 で初期化
+		for (int i = 0; i < 5; i++) {
+			C[i] = 0;
+			D[i] = 0;
+			E[i] = 0;
+		}
+
+		// List の中身を前から詰め直す
+		int idx = 0;
+		for (int value : list) {
+			if (idx < 5) {
+				C[idx] = value;
+			} else if (idx < 10) {
+				D[idx - 5] = value;
+			} else {
+				E[idx - 10] = value;
+			}
+			idx++;
+		}
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
 
 		System.out.print("C...");
 
-
-		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		// ここに配列Cの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < C.length; i++) {
+			System.out.print(C[i]);
+			if (i < C.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
-		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		// ここに配列Dの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < D.length; i++) {
+			System.out.print(D[i]);
+			if (i < D.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
-		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		// ここに配列Eの要素をすべて出力する処理を記述する。
+		for (int i = 0; i < E.length; i++) {
+			System.out.print(E[i]);
+			if (i < E.length - 1) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nになりました。\n");
 
