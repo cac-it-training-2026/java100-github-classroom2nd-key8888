@@ -28,20 +28,40 @@
 
 package lesson04.challenge05;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class WarehouseManager {
+
+	public static boolean checkDuplication(int arr[], int target) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
 
-
 		//ここに配列の宣言を記述する
+		int arr[] = new int[5];
 
-
-		int intputNum = 0;
-		boolean loopFlag = false;
-
+		//		自分で変数を作成したので不要です
+		//		int intputNum = 0;
+		//		boolean loopFlag = false;
 
 		//ここに重複チェックおよび値の代入処理を記述する
-
+		int index = 0;
+		while (true) {
+			int ramdomInt = ThreadLocalRandom.current().nextInt(1, 6);
+			if (checkDuplication(arr, ramdomInt)) {
+				arr[index] = ramdomInt;
+				index++;
+			}
+			if (index > 4) {
+				break;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の検査結果を教えてください。\n");
@@ -49,9 +69,12 @@ public class WarehouseManager {
 		System.out.println("Yさん：");
 		System.out.println("はい、");
 
-
 		//ここに要素の確認および何袋目かの出力処理を記述する
-
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 5) {
+				System.out.println((i + 1) + "袋目");
+			}
+		}
 
 		System.out.println("に入っていました。");
 

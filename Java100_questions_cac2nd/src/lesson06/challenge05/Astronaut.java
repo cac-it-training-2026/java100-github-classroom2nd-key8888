@@ -37,6 +37,10 @@ class Spaceship {
     }
 
     //ここに適切な処理を記述する。
+    public Spaceship(int air, int fuel) {
+        this.air = air;
+        this.fuel  = fuel;
+    }
 
     public int getFuel() {
         return fuel;
@@ -74,6 +78,8 @@ public class Astronaut {
         int fuel = Integer.parseInt(fuelStr);
 
         //ここに適切な処理を記述する。
-
+        Spaceship spaceship2 = new Spaceship(air, fuel);
+        System.out.print("\n空気の初期値は：" +spaceship2.getAir()+"リットルです。\n");
+        System.out.print("燃料の初期値は：" +spaceship2.getFuel()+"ガロンです。\n");
     }
 }

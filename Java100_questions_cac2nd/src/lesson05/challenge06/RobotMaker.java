@@ -76,6 +76,8 @@ public class RobotMaker {
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //makeOmeletを実行する。
+        Robot robot = new Robot();
+        robot.makeOmelet(eggNum, butterNum);
 
         System.out.println("Rさん：");
         System.out.println("わー、博士すごいですね！味もなかなか。\n");

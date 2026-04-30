@@ -63,6 +63,23 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する。
+        Alphalian[] alphalians = new Alphalian[10];
+        for (int i = 0; i < alphalians.length; i++) {
+            alphalians[i] = new Alphalian();
+            
+            // read from console
+            System.out.print("名前を入れてください（A～E）＞");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String input = reader.readLine();
+            System.out.println("\nα星人：" + (i + 1) + "人目");
+            if (input.equals(alphalians[i].getName())) {
+                hitFlag = true;
+                break;
+            } else {
+                System.out.println("おら、そんな名前じゃないアルファ！");
+                System.out.println(alphalians[i].getName() + "が正解だアルファ！");
+            }
+        }
 
 
         if (hitFlag) {

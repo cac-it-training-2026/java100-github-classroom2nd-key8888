@@ -22,5 +22,16 @@
 package lesson01.challenge03;
 
 public class Patisserie {
+	public static void main(String[] args) {
+		int sitoron, shokora, pisuta;
+
+		sitoron = 30;
+		shokora = 30;
+		pisuta = 30;
+
+		System.out.println(" * シトロン      \\250 ・・・ 残り%d個\n".formatted(sitoron)
+				+ " * ショコラ      \\280 ・・・ 残り%d個\n".formatted(shokora)
+				+ " * ピスターシュ  \\320 ・・・ 残り%d個".formatted(pisuta));
+	}
 
 }

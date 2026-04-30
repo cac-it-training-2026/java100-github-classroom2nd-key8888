@@ -19,5 +19,9 @@
 package lesson01.challenge02;
 
 public class Patisserie {
-
+	public static void main(String[] args) {
+		System.out.println("シトロン      \\250\n"
+				+ "ショコラ      \\280\n"
+				+ "ピスターシュ  \\320");
+	}
 }

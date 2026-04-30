@@ -60,13 +60,18 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
-
-
+        Spaceship ship = new Spaceship(damage);
+        Dock dock = new Dock();
+        dock.repairShip(ship);
+        damage = ship.getDamage();
+        
+        
         System.out.println("\n宇宙飛行士：");
         System.out.println("よし！ドックから戻ってきたぞ！\n");
-
-
+        
+        
         //ここに適切な処理を記述する
+        
 
 
         System.out.println("現在のダメージ：" + damage);

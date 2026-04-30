@@ -48,6 +48,32 @@ class Samurai {
 
 
 //ここにRetainerクラスを記述
+class Retainer extends Samurai {
+
+    protected String domain;
+
+    Retainer(String name, String domain) {
+        this.name = name;
+        this.domain = domain;
+    }
+
+    @Override
+    public String toString() {
+        return "拙者は" + domain + "藩士、" + name + "ともうす。";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Retainer other = (Retainer) obj;
+        return domain.equals(other.domain);
+    }
+}
 
 
 public class CastleTown {
@@ -57,24 +83,40 @@ public class CastleTown {
 
 
         //ここに適切な処理を記述
+        Retainer retainer1 = new Retainer("テスト太郎", "○△□藩");
+        Retainer retainer2 = new Retainer("テスト次郎", "○△□藩");
+        System.out.println(retainer1);
+        System.out.println(retainer2);
 
 
         System.out.println("\n同じ藩に所属しているか確認します。\n");
 
 
         //ここに適切な処理を記述
+        if (retainer1.equals(retainer2)) {
+            System.out.println("【同じ藩に所属しています】");
+        } else {
+            System.out.println("【同じ藩に所属していません】");
+        }
 
 
         System.out.println("\n○△×藩の藩士を一つ作ります。\n");
 
 
         //ここに適切な処理を記述
+        Retainer retainer3 = new Retainer("テスト三郎", "○△×藩");
+        System.out.println(retainer3);
 
 
         System.out.println("\n同じ藩に所属しているか確認します。\n");
 
 
         //ここに適切な処理を記述
+        if (retainer1.equals(retainer3)) {
+            System.out.println("【同じ藩に所属しています】");
+        } else {
+            System.out.println("【同じ藩に所属していません】");
+        }
 
 
     }

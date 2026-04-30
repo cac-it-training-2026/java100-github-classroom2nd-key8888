@@ -101,6 +101,29 @@ public class WarehouseManager {
 
 
 		//ここに適切な値の挿入処理を記述する
+		// 1～5の数値のうち、wonderfulArrayに存在しない数値を探す
+		int missingNum = 0;
+		for (int num = 0; num <= 5; num++) {
+			boolean found = false;
+			for (int i = 0; i < wonderfulArray.length; i++) {
+				if (wonderfulArray[i] == num) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				missingNum = num;
+				break;
+			}
+		}
+		// 0の位置を見つけて、missingNumを挿入する
+		for (int i = 0; i < wonderfulArray.length; i++) {
+			if (wonderfulArray[i] == 0) {
+				wonderfulArray[i] = missingNum;
+				break;
+			}
+		}
+		
 
 
 		System.out.println("Yさん：");

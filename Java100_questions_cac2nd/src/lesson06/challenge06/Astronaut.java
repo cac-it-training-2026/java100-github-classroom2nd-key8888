@@ -16,7 +16,7 @@ class Spaceship {
     private int fuel;
 
     //このコンストラクタを変更する。
-    public Spaceship() {
+    private Spaceship() {
         this.air = 100;
         this.fuel = 100;
     }
@@ -49,7 +49,7 @@ public class Astronaut {
     public static void main(String[] args) {
 
         //コメントを外すとコンパイルエラーになる
-        //Spaceship spaceship1 = new Spaceship();
+        Spaceship spaceship1 = new Spaceship();
 
 
     }

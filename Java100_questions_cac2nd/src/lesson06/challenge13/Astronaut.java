@@ -62,12 +62,19 @@ public class Astronaut {
 
 
         //ここに適切な処理を記述する
+        Spaceship spaceship = new Spaceship();
+        spaceship.setFuel(fuelNum);
 
 
         boolean isCheck = false;
 
 
         //ここに適切な処理を記述する
+        if (spaceship.checkFuel(spaceship.getFuel())) {
+            isCheck = true;
+        } else {
+            isCheck = false;
+        }
 
 
         System.out.println("\n宇宙飛行士：");

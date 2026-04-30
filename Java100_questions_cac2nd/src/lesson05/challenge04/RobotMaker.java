@@ -62,6 +62,8 @@ public class RobotMaker {
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //pumpWaterを実行する。
+        Robot robot = new Robot();
+        robot.pumpWater();
 
         System.out.println("G博士：");
         System.out.println("......確かに出来とる。\n");

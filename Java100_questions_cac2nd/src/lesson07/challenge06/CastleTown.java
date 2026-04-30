@@ -37,10 +37,25 @@ class Samurai {
 
 
 //ここにUltimateSwordsmanクラスを記述
+final class UltimateSwordsman extends Samurai {
+
+    @Override
+    void fight() {
+        System.out.println("究極の剣豪は戦うよ～。");
+    }
+
+}
 
 
 //ここにEasySwordsmanクラスを記述
 
+class EasySwordsman extends UltimateSwordsman {
+    // このクラスはUltimateSwordsmanを継承できない
+        @Override
+    void fight() {
+        System.out.println("普通の剣豪は戦うよ～。");
+    }
+}
 
 public class CastleTown {
 
@@ -49,6 +64,8 @@ public class CastleTown {
 
 
        //ここにEasySwordsmanクラスのオブジェクト生成処理を記述
+        EasySwordsman easySwordsman1 = new EasySwordsman();
+        easySwordsman1.fight();
 
 
     }

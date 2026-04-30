@@ -47,12 +47,14 @@ public class Explorer {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		//ここにfor文を記述する。
+		for (int i = 0; i < 5; i++) {
 
 			System.out.print("応募する人の名前を入れてください＞");
 
 			String name = br.readLine();
 			System.out.println("\n隊長：");
 			System.out.println(name + "さん合格！\n");
+		}
 
 		//ここに  } を記述する。
 

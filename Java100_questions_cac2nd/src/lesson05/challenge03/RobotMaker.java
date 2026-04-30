@@ -78,6 +78,10 @@ public class RobotMaker {
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //pumpWaterを3回実行する。
+        Robot robot = new Robot();
+        robot.pumpWater();
+        robot.pumpWater();
+        robot.pumpWater();
 
         System.out.println("G博士：");
         System.out.println("上出来じゃ。\n");
